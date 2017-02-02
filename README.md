@@ -6,6 +6,16 @@ Sign up and find out more at https://solcast.com.au/api/ .
 
 More documentation coming soon...
 
-## Installation instructions
+## Installation
+
+### PyPI install
 `pip install solcast`
+
+### Github install
+```
+git clone https://github.com/cjtapper/solcast-py
+cd solcast-py
+python setup.py install
+```
+
 
