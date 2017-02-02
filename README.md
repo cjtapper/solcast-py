@@ -11,7 +11,7 @@ More documentation coming soon...
 ### PyPI install
 `pip install solcast`
 
-### Github install
+### GitHub install
 ```
 git clone https://github.com/cjtapper/solcast-py
 cd solcast-py
