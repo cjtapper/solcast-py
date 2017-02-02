@@ -17,14 +17,7 @@ class RadiationEstimatedActuals(Base):
         self.latest = kwargs.get('latest', False)
         self.estimated_actuals = None
 
-        self.params = {'latitude' : self.latitude,
-                       'longitude' : self.longitude,
-                       'capacity' : self.capacity,
-                       'tilt' : self.tilt,
-                       'azimuth' : self.azimuth,
-                       'install_date' : self.install_date,
-                       'loss_factor': self.loss_factor
-                      }
+        self.params = {'latitude' : self.latitude, 'longitude' : self.longitude}
 
         if self.latest:
             self.end_point = self.end_point + '/latest'
