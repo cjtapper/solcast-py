@@ -1,9 +1,8 @@
-from urllib.parse import urljoin
 import logging
-import requests
 import time
+from urllib.parse import urljoin
 
-__all__ = ['get']
+import requests
 
 _BASE_URL = 'https://api.solcast.com.au/'
 
@@ -35,7 +34,7 @@ class Base(object):
                         format(seconds=sleep_time))
 
             time.sleep(sleep_time)
-            Base.throttled=False
+            Base.throttled = False
 
         try:
 
@@ -48,13 +47,12 @@ class Base(object):
                 if Base.throttle_release:
                     Base.throttle_release = float(Base.throttle_release)
 
-                # FIXME: need to make this non-naive after Darren changes code
                 sleep_time = int(Base.throttle_release - now + self.throttle_release_padding)
                 logger.info('HTTP status 429: Solcast API rate limit reached. Waiting {seconds} seconds'.\
                             format(seconds=sleep_time))
 
                 time.sleep(sleep_time)
-                Base.throttled=False
+                Base.throttled = False
 
 
             self.status_code = r.status_code
@@ -68,7 +66,7 @@ class Base(object):
                     Base.throttle_release = float(Base.throttle_release)
 
                 if self.headers.get('X-Rate-Limit-Remaining') == '0':
-                    Base.throttled=True
+                    Base.throttled = True
 
         except (KeyboardInterrupt, SystemExit):
             raise

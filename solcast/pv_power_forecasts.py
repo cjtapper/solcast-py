@@ -7,7 +7,7 @@ import requests
 from solcast.base import Base
 
 
-class PvPowerForecast(Base):
+class PvPowerForecasts(Base):
 
     end_point = 'pv_power/forecasts'
 
@@ -41,9 +41,11 @@ class PvPowerForecast(Base):
         self.forecasts = []
 
         for forecast in self.content.get('forecasts'):
-            parsed_forecast = {'period_end' : parse_datetime(forecast['period_end']),
-                               'period' : parse_duration(forecast['period']),
-                               'pv_estimate' : forecast['pv_estimate']
-                              }
 
-            self.forecasts.append(parsed_forecast)
+            # Convert period_end and period. All other fields should already be
+            # the correct type
+
+            forecast['period_end'] = parse_datetime(forecast['period_end'])
+            forecast['period'] = parse_duration(forecast['period'])
+
+            self.forecasts.append(forecast)

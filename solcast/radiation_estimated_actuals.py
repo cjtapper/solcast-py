@@ -1,25 +1,19 @@
 from datetime import datetime, timedelta
 from urllib.parse import urljoin
-
 from isodate import parse_datetime, parse_duration
+
 import requests
+from solcast.base import Base
 
-from monitored_pv.solcast.base import Base
 
+class RadiationEstimatedActuals(Base):
 
-class PvPowerEstimatedActuals(Base):
+    end_point = 'radiation/estimated_actuals'
 
-    end_point = 'pv_power/estimated_actuals'
-
-    def __init__(self, latitude, longitude, capacity, *args, **kwargs):
+    def __init__(self, latitude, longitude, *args, **kwargs):
 
         self.latitude = latitude
         self.longitude = longitude
-        self.capacity = capacity
-        self.tilt = kwargs.get('tilt')
-        self.azimuth = kwargs.get('azimuth')
-        self.install_date = kwargs.get('install_date')
-        self.loss_factor = kwargs.get('loss_factor')
         self.latest = kwargs.get('latest', False)
         self.estimated_actuals = None
 

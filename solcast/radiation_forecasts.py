@@ -6,6 +6,7 @@ import requests
 
 from solcast.base import Base
 
+
 class RadiationForecasts(Base):
 
     end_point = 'radiation/forecasts'
@@ -22,14 +23,16 @@ class RadiationForecasts(Base):
         self._get(*args, **kwargs)
 
         if self.ok:
-            self._generate_forecast_dict()
+            self._generate_forecasts_dict()
 
-    def _generate_forecast_dict(self):
+    def _generate_forecasts_dict(self):
 
         self.forecasts = []
 
         for forecast in self.content.get('forecasts'):
 
+            # Convert period_end and period. All other fields should already be
+            # the correct type
             forecast['period_end'] = parse_datetime(forecast['period_end'])
             forecast['period'] = parse_duration(forecast['period'])
 
