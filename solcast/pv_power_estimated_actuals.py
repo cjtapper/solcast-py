@@ -4,7 +4,7 @@ from urllib.parse import urljoin
 from isodate import parse_datetime, parse_duration
 import requests
 
-from monitored_pv.solcast.base import Base
+from solcast.base import Base
 
 
 class PvPowerEstimatedActuals(Base):

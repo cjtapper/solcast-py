@@ -1,2 +1,6 @@
 *.swp
 *.pyc
+MANIFEST
+build/
+dist/
+solcast.egg-info/
