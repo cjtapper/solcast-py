@@ -1,6 +1,7 @@
 ==========
 solcast-py
 ==========
+
 A Python client library for the Solcast API for photovoltaic power and solar
 radiation forecasting.
 
@@ -26,13 +27,14 @@ GitHub install
 
 Providing the API key
 =====================
+
 An API key is required to use the Solcast API. You can sign up for one at
 https://solcast.com.au
 
 There are multiple ways of providing the API key to solcast-py:
 
 Setting an environment variable
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 You can set the environment variable ``SOLCAST_API_KEY``:
 
 .. code-block:: bash
@@ -42,7 +44,7 @@ You can set the environment variable ``SOLCAST_API_KEY``:
 To persist this between sessions, add this line to your ``.bashrc`` (or equivalent).
 
 Positional or keyword argument
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 Alternatively, you can pass the API key as the final positional argument, or the
 keyword argument ``api_key``. For example:
 
