@@ -55,3 +55,4 @@ or:
 .. code-block:: python
 
    >>> solcast.get_pv_power_forecasts(-35, 149, capacity=2000, api_key='INSERTYOURAPIKEYHERE')
+
