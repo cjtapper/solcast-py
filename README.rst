@@ -12,12 +12,12 @@ Installation
 ============
 PyPI install
 ------------
-::
+.. code-block:: bash
   pip install solcast
 
 GitHub install
 --------------
-::
+.. code-block:: bash
   git clone https://github.com/cjtapper/solcast-py
   cd solcast-py
   python setup.py install
