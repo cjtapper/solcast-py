@@ -36,7 +36,7 @@ There are multiple ways of providing the API key to solcast-py:
 
 Setting an environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can set the environment variable 'SOLCAST_API_KEY'
+You can set the environment variable ``SOLCAST_API_KEY``
 
 .. code-block:: bash
 
@@ -45,16 +45,16 @@ You can set the environment variable 'SOLCAST_API_KEY'
 Positional or keyword argument
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Alternatively, you can pass the API key as the final positional argument, or the
-keyword argument 'api_key'. For example:
+keyword argument ``api_key``. For example:
 
 .. code-block:: python
 
-   >>> solcast.get_radiation_forecasts(-35, 149, <insert your API key here>)
+   >>> solcast.get_radiation_forecasts(-35, 149, 'INSERTYOURAPIKEYHERE')
 
 or:
 
 .. code-block:: python
 
-   >>> solcast.get_pv_power_forecasts(-35, 149, capacity=2000, api_key=<insert your API key here>)
+   >>> solcast.get_pv_power_forecasts(-35, 149, capacity=2000, api_key='INSERTYOURAPIKEYHERE')
 
 
