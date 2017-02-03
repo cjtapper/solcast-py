@@ -26,7 +26,6 @@ GitHub install
 
 Usage
 =====
-
 Providing the API key
 ---------------------
 An API key is required to use the Solcast API. You can sign up for one at
