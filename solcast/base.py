@@ -4,6 +4,8 @@ from urllib.parse import urljoin
 
 import requests
 
+from solcast import api_key
+
 _BASE_URL = 'https://api.solcast.com.au/'
 
 class Base(object):
@@ -11,7 +13,11 @@ class Base(object):
     throttled = False
     throttle_release = None
 
-    def _get(self, api_key, **kwargs):
+    def _get(self, api_key=api_key, **kwargs):
+
+        if api_key == None:
+            raise TypeError('{type}() missing 1 required argument: \'api_key\''\
+                            .format(type=type(self)))
 
         logger = logging.getLogger()
 
