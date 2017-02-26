@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from urllib.parse import urljoin
 
 from isodate import parse_datetime, parse_duration
 import requests

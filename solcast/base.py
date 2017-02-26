@@ -1,6 +1,11 @@
 import logging
 import time
-from urllib.parse import urljoin
+
+# Package name has changed between Python 2.7 and 3
+try:
+    from urllib.parse import urljoin
+except ImportError:
+    from urlparse import urljoin
 
 import requests
 
