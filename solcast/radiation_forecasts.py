@@ -1,7 +1,4 @@
-from datetime import datetime, timedelta
-
 from isodate import parse_datetime, parse_duration
-import requests
 
 from solcast.base import Base
 
@@ -16,8 +13,8 @@ class RadiationForecasts(Base):
         self.longitude = longitude
         self.forecasts = None
 
-        self.params = {'latitude' : self.latitude,
-                       'longitude' : self.longitude}
+        self.params = {'latitude': self.latitude,
+                       'longitude': self.longitude}
 
         self._get(*args, **kwargs)
 
