@@ -1,7 +1,4 @@
-from datetime import datetime, timedelta
-
 from isodate import parse_datetime, parse_duration
-import requests
 
 from solcast.base import Base
 
@@ -21,14 +18,13 @@ class PvPowerForecasts(Base):
         self.loss_factor = kwargs.get('loss_factor')
         self.forecasts = None
 
-        self.params = {'latitude' : self.latitude,
-                       'longitude' : self.longitude,
-                       'capacity' : self.capacity,
-                       'tilt' : self.tilt,
-                       'azimuth' : self.azimuth,
-                       'install_date' : self.install_date,
-                       'loss_factor' : self.loss_factor
-                      }
+        self.params = {'latitude': self.latitude,
+                       'longitude': self.longitude,
+                       'capacity': self.capacity,
+                       'tilt': self.tilt,
+                       'azimuth': self.azimuth,
+                       'install_date': self.install_date,
+                       'loss_factor': self.loss_factor}
 
         self._get(*args, **kwargs)
 

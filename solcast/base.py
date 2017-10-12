@@ -13,6 +13,7 @@ from solcast import api_key
 
 _BASE_URL = 'https://api.solcast.com.au/'
 
+
 class Base(object):
 
     throttled = False
@@ -20,8 +21,8 @@ class Base(object):
 
     def _get(self, api_key=api_key, **kwargs):
 
-        if api_key == None:
-            raise TypeError('{type}() missing 1 required argument: \'api_key\''\
+        if api_key is None:
+            raise TypeError('{type}() missing 1 required argument: \'api_key\''
                             .format(type=type(self)))
 
         logger = logging.getLogger()
@@ -38,10 +39,11 @@ class Base(object):
 
         now = time.time()
 
-        if self.rate_limited and Base.throttled and now < Base.throttle_release:
+        if self.rate_limited and Base.throttled and \
+           now < Base.throttle_release:
             sleep_time = int(Base.throttle_release - now +
                              self.throttle_release_padding)
-            logger.info('Solcast API rate limit reached. Waiting {seconds} seconds'.\
+            logger.info('Solcast API rate limit reached. Waiting {seconds} seconds'.
                         format(seconds=sleep_time))
 
             time.sleep(sleep_time)
@@ -58,13 +60,13 @@ class Base(object):
                 if Base.throttle_release:
                     Base.throttle_release = float(Base.throttle_release)
 
-                sleep_time = int(Base.throttle_release - now + self.throttle_release_padding)
-                logger.info('HTTP status 429: Solcast API rate limit reached. Waiting {seconds} seconds'.\
+                sleep_time = int(Base.throttle_release - now +
+                                 self.throttle_release_padding)
+                logger.info('HTTP status 429: Solcast API rate limit reached. Waiting {seconds} seconds'.
                             format(seconds=sleep_time))
 
                 time.sleep(sleep_time)
                 Base.throttled = False
-
 
             self.status_code = r.status_code
             self.url = r.url
@@ -87,7 +89,6 @@ class Base(object):
             self.content = r.json()
         except:
             self.content = r.content
-
 
     @property
     def ok(self):

@@ -1,7 +1,4 @@
-from datetime import datetime, timedelta
-
 from isodate import parse_datetime, parse_duration
-import requests
 
 from solcast.base import Base
 
@@ -17,7 +14,7 @@ class RadiationEstimatedActuals(Base):
         self.latest = kwargs.get('latest', False)
         self.estimated_actuals = None
 
-        self.params = {'latitude' : self.latitude, 'longitude' : self.longitude}
+        self.params = {'latitude': self.latitude, 'longitude': self.longitude}
 
         if self.latest:
             self.end_point = self.end_point + '/latest'
@@ -36,7 +33,7 @@ class RadiationEstimatedActuals(Base):
             # Convert period_end and period. All other fields should already be
             # the correct type
 
-            est_act['period_end'] =  parse_datetime(est_act['period_end'])
+            est_act['period_end'] = parse_datetime(est_act['period_end'])
             est_act['period'] = parse_duration(est_act['period'])
 
             self.estimated_actuals.append(est_act)
