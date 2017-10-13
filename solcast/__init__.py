@@ -11,4 +11,3 @@ from .pv_power_forecasts import PvPowerForecasts
 from .pv_power_estimated_actuals import PvPowerEstimatedActuals
 from .radiation_forecasts import RadiationForecasts
 from .radiation_estimated_actuals import RadiationEstimatedActuals
-
