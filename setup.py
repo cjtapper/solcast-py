@@ -1,4 +1,5 @@
 from setuptools import setup
+
 setup(name='solcast',
       version='0.2.1',
       description='Client library for the Solcast API',
@@ -7,8 +8,4 @@ setup(name='solcast',
       author='Chris Tapper',
       author_email='cj.tapper@gmail.com',
       packages=['solcast'],
-      install_requires=[
-          'requests',
-          'isodate'
-      ]
-     )
+      install_requires=['requests', 'isodate'])
