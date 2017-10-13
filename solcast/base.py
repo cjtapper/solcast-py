@@ -43,8 +43,8 @@ class Base(object):
            now < Base.throttle_release:
             sleep_time = int(Base.throttle_release - now +
                              self.throttle_release_padding)
-            logger.info('Solcast API rate limit reached. Waiting {seconds} seconds'.
-                        format(seconds=sleep_time))
+            logger.info('Solcast API rate limit reached. ' +
+                        'Waiting {seconds} seconds'.format(seconds=sleep_time))
 
             time.sleep(sleep_time)
             Base.throttled = False
@@ -62,8 +62,9 @@ class Base(object):
 
                 sleep_time = int(Base.throttle_release - now +
                                  self.throttle_release_padding)
-                logger.info('HTTP status 429: Solcast API rate limit reached. Waiting {seconds} seconds'.
-                            format(seconds=sleep_time))
+                logger.info('HTTP status 429: ' +
+                            'Solcast API rate limit reached. ' +
+                            'Waiting {s} seconds'.format(s=sleep_time))
 
                 time.sleep(sleep_time)
                 Base.throttled = False
