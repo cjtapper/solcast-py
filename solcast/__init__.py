@@ -1,3 +1,5 @@
+"""Initialisation for solcast package."""
+
 import os as _os
 
 from .pv_power_forecasts import PvPowerForecasts as get_pv_power_forecasts
