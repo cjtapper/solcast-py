@@ -95,7 +95,4 @@ class Base(object):
     @property
     def ok(self):
 
-        if self.status_code == 200:
-            return True
-        else:
-            return False
+        return self.status_code == 200
