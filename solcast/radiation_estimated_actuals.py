@@ -1,3 +1,5 @@
+"""Radiation estimated actuals module"""
+
 from isodate import parse_datetime, parse_duration
 
 from solcast.base import Base

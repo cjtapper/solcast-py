@@ -32,7 +32,8 @@ class Base(object):
         self.content = None
         self.api_key = api_key
         self.rate_limited = kwargs.get('rate_limited', True)
-        self.throttle_release_padding = kwargs.get('throttle_release_padding', 2)
+        self.throttle_release_padding = \
+            kwargs.get('throttle_release_padding', 2)
 
         params = self.params.copy()
         params['format'] = 'json'
@@ -94,7 +95,4 @@ class Base(object):
     @property
     def ok(self):
 
-        if self.status_code == 200:
-            return True
-        else:
-            return False
+        return self.status_code == 200
