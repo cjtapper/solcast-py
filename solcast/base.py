@@ -28,7 +28,7 @@ class Base(object):
         logger = logging.getLogger()
 
         self.url = urljoin(_BASE_URL, self.end_point)
-        self.status_code = 'Unknown'
+        self.status_code = None
         self.content = None
         self.api_key = api_key
         self.rate_limited = kwargs.get('rate_limited', True)
