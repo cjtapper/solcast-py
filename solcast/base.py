@@ -89,7 +89,7 @@ class Base(object):
         # Attempt to open json from Request connection
         try:
             self.content = r.json()
-        except:
+        except ValueError:
             self.content = r.content
 
     @property
