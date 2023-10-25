@@ -1,3 +1,7 @@
+**UNOFFICIAL AND UNMAINTAINED**
+
+You can find the official Solcast Python SDK here: https://github.com/Solcast/solcast-api-python-sdk
+
 ==========
 solcast-py
 ==========
@@ -5,17 +9,8 @@ solcast-py
 A Python client library for the Solcast API for photovoltaic power and solar
 radiation forecasting.
 
-Sign up and find out more at https://solcast.com.au/api/ .
-
-More documentation coming soon...
-
 Installation
 ============
-PyPI install
-------------
-.. code-block:: bash
-
-  $ pip install solcast
 
 GitHub install
 --------------
